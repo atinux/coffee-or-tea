@@ -20,6 +20,13 @@ function vote(choice) {
     body: { choice }
   }).then(refresh)
 }
+useSeoMeta({
+  title: 'Coffee or Tea?',
+  description: 'A simple app to vote for your favorite drink using Nuxt and SQLite with edge-side rendering.',
+  ogImage: 'https://github.com/Atinux/vue-london-edge/assets/904724/b6eb9925-21b1-4ad4-8c86-2bcefc9f1973',
+  twitterImage: 'https://github.com/Atinux/vue-london-edge/assets/904724/b6eb9925-21b1-4ad4-8c86-2bcefc9f1973',
+  twitterCard: 'summary_large_image'
+})
 </script>
 
 <template>
