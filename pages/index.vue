@@ -2,6 +2,7 @@
 const { loggedIn, user, clear } = useUserSession()
 const { data: votes, refresh, error } = await useFetch('/api/votes')
 
+const userChoice = computed(() => votes.value.find(r => r.username === user.value?.login)?.choice)
 const coffeeScore = computed(() => votes.value.filter(r => r.choice === 'coffee').length)
 const teaScore = computed(() => votes.value.filter(r => r.choice === 'tea').length)
 
@@ -31,8 +32,8 @@ function vote(choice) {
   <div v-else class="min-h-screen flex flex-col gap-8 items-center pt-4">
     <h1 class="text-3xl">Coffee or Tea?</h1>
     <div class="flex items-center gap-4">
-      <button @click="vote('coffee')" class="p-4 border rounded hover:bg-gray-50;">☕ {{ coffeeScore }}</button>
-      <button @click="vote('tea')" class="p-4 border rounded hover:bg-gray-50;">🍵 {{ teaScore }}</button>
+      <button @click="vote('coffee')" class="p-4 border rounded hover:bg-gray-50" :class="{ '!bg-gray-100': userChoice === 'coffee' }">☕ {{ coffeeScore }}</button>
+      <button @click="vote('tea')" class="p-4 border rounded hover:bg-gray-50" :class="{ '!bg-gray-100': userChoice === 'tea' }">🍵 {{ teaScore }}</button>
     </div>
     <div>
       <p v-if="loggedIn">Logged in as {{ user.login }}, <button @click="clear" class="underline">logout</button></p>
