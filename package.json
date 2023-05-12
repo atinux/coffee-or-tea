@@ -9,12 +9,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.4.6",
     "@nuxtjs/tailwindcss": "^6.6.8",
     "@types/node": "^18",
     "nuxt": "^3.4.3",
-    "nuxt-space-layer": "^0.0.7"
-  },
-  "dependencies": {
-    "@nuxt/devtools": "^0.4.6"
+    "nuxt-space-layer": "^0.0.9"
   }
 }
