@@ -5,7 +5,7 @@ const { data: votes, refresh, error } = await useFetch('/api/votes')
 const coffeeScore = computed(() => votes.value.filter(r => r.choice === 'coffee').length)
 const teaScore = computed(() => votes.value.filter(r => r.choice === 'tea').length)
 
-if (!error) {
+if (!error.value) {
   let interval
   onMounted(() => {
     interval = setInterval(refresh, 1000)
