@@ -1,17 +1,19 @@
 <script setup>
 const { loggedIn, user, clear } = useUserSession()
-const { data: votes, refresh } = await useFetch('/api/votes')
+const { data: votes, refresh, error } = await useFetch('/api/votes')
 
 const coffeeScore = computed(() => votes.value.filter(r => r.choice === 'coffee').length)
 const teaScore = computed(() => votes.value.filter(r => r.choice === 'tea').length)
 
-let interval
-onMounted(() => {
-  interval = setInterval(refresh, 1000)
-})
-onBeforeUnmount(() => {
-  clearInterval(interval)
-})
+if (!error) {
+  let interval
+  onMounted(() => {
+    interval = setInterval(refresh, 1000)
+  })
+  onBeforeUnmount(() => {
+    clearInterval(interval)
+  })
+}
 
 function vote(choice) {
   if (!loggedIn.value) {
@@ -25,7 +27,8 @@ function vote(choice) {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col gap-8 items-center pt-4">
+  <pre v-if="error">{{ error }}</pre>
+  <div v-else class="min-h-screen flex flex-col gap-8 items-center pt-4">
     <h1 class="text-3xl">Coffee or Tea?</h1>
     <div class="flex items-center gap-4">
       <button @click="vote('coffee')" class="p-4 border rounded hover:bg-gray-50;">☕ {{ coffeeScore }}</button>
