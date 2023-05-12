@@ -15,6 +15,9 @@ onBeforeUnmount(() => {
 })
 
 function vote(choice) {
+  if (!loggedIn.value) {
+    return alert('You need to login to vote!')
+  }
   $fetch('/api/vote', {
     method: 'POST',
     body: { choice }
