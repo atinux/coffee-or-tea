@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Vue London 2023 demo
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a demo application for Vue London 2023 using edge-side rendering on CloudFlare Pages with D1 as database.
 
 ## Setup
 
