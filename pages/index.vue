@@ -35,7 +35,7 @@ function vote(choice) {
     </div>
     <ul>
       <li v-for="vote in votes" :key="vote.id">
-        {{ vote.choice === 'coffee' ? '☕️' : '🍵' }} by {{ vote.username }}
+        <a :href="`https://github.com/${vote.username}`" target="_blank" class="font-medium">{{ vote.username }}</a> prefers {{ vote.choice === 'coffee' ? '☕️' : '🍵' }}
       </li>
     </ul>
     <footer class="text-center">
