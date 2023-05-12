@@ -23,7 +23,7 @@ function vote(choice) {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col gap-8 items-center pt-4">
+  <div class="min-h-screen flex flex-col gap-8 items-center pt-8">
     <h1 class="text-3xl">Coffee or Tea?</h1>
     <div class="flex items-center gap-4">
       <button @click="vote('coffee')" class="vote" :class="{ '!bg-gray-100': userChoice === 'coffee' }">☕ {{ totalCoffee }}</button>
@@ -38,6 +38,15 @@ function vote(choice) {
         {{ vote.choice === 'coffee' ? '☕️' : '🍵' }} by {{ vote.username }}
       </li>
     </ul>
+    <footer class="text-center">
+      <NuxtLink href="https://github.com/atinux/vue-london-edge" target="_blank" class="text-sm text-gray-500 hover:text-gray-700">
+        GitHub
+      </NuxtLink>
+      ·
+      <NuxtLink href="https://twitter.com/Atinux" target="_blank" class="text-sm text-gray-500 hover:text-gray-700">
+        Twitter
+      </NuxtLink>
+    </footer>
   </div>
 </template>
 
