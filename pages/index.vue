@@ -2,7 +2,7 @@
 const { loggedIn, user, clear } = useUserSession()
 const { data: votes, refresh } = await useFetch('/api/votes')
 
-const userChoice = computed(() => votes.value.find(vote => vote.userId === user.value.id)?.choice)
+const userChoice = computed(() => votes.value.find(vote => vote.userId === user.value?.id)?.choice)
 const totalCoffee = computed(() => votes.value.filter(vote => vote.choice === 'coffee').length)
 const totalTea = computed(() => votes.value.filter(vote => vote.choice === 'tea').length)
 
