@@ -6,8 +6,12 @@ const userChoice = computed(() => votes.value.find(vote => vote.userId === user.
 const totalCoffee = computed(() => votes.value.filter(vote => vote.choice === 'coffee').length)
 const totalTea = computed(() => votes.value.filter(vote => vote.choice === 'tea').length)
 
+let interval
 onMounted(() => {
-  setInterval(refresh, 1000)
+  interval = setInterval(refresh, 1000)
+})
+onBeforeUnmount(() => {
+  clearInterval(interval)
 })
 
 function vote(choice) {
@@ -22,8 +26,8 @@ function vote(choice) {
   <div class="min-h-screen flex flex-col gap-8 items-center pt-4">
     <h1 class="text-3xl">Coffee or Tea?</h1>
     <div class="flex items-center gap-4">
-      <button @click="vote('coffee')" class="vote" :class="{ '!bg-primary-100': userChoice === 'coffee' }">☕ {{ totalCoffee }}</button>
-      <button @click="vote('tea')" class="vote" :class="{ '!bg-primary-100': userChoice === 'tea' }">🍵 {{ totalTea }}</button>
+      <button @click="vote('coffee')" class="vote" :class="{ '!bg-gray-100': userChoice === 'coffee' }">☕ {{ totalCoffee }}</button>
+      <button @click="vote('tea')" class="vote" :class="{ '!bg-gray-100': userChoice === 'tea' }">🍵 {{ totalTea }}</button>
     </div>
     <div>
       <p v-if="loggedIn">Welcome {{ user.login }}, <button @click="clear" class="underline">logout</button>.</p>
