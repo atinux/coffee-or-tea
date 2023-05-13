@@ -13,6 +13,6 @@
     "@nuxtjs/tailwindcss": "^6.6.8",
     "@types/node": "^18",
     "nuxt": "^3.4.3",
-    "nuxt-space-layer": "^0.1.0"
+    "nuxt-space-layer": "^0.2.1"
   }
 }
