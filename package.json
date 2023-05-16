@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.4.6",
-    "@nuxtjs/tailwindcss": "^6.6.8",
-    "@types/node": "^18",
-    "nuxt": "^3.4.3",
-    "nuxt-space-layer": "^0.2.1"
+    "@nuxtjs/tailwindcss": "^6.7.0",
+    "@types/node": "^18.16.10",
+    "nuxt": "npm:nuxt3@latest",
+    "nuxt-space-layer": "^0.2.2"
   }
 }
