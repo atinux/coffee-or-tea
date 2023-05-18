@@ -4,5 +4,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/devtools',
     '@nuxtjs/tailwindcss'
-  ]
+  ],
+  routeRules: {
+    '/nuxt': { redirect: 'http://nuxt.com' }
+  }
 })
