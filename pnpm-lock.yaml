@@ -14,8 +14,8 @@ devDependencies:
     specifier: ^3.5.1
     version: 3.5.1(@types/node@20.2.3)
   nuxt-space-layer:
-    specifier: ^0.4.1
-    version: 0.4.1
+    specifier: ^0.4.2
+    version: 0.4.2
 
 packages:
 
@@ -5567,8 +5567,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /nuxt-space-layer@0.4.1:
-    resolution: {integrity: sha512-4aXXlr+T54v9sH3XTrXT2NXF1GkE9rQ3BtUTUan9dejLpw5L5DVmrW479LqnAWc7ANzNONElwNe4C9+v6TiiBA==}
+  /nuxt-space-layer@0.4.2:
+    resolution: {integrity: sha512-l4cL906kjouZ5VZO2/tJD6bq21yLz6HgVyU5tBgX/5R76pazvxfK5mWzYwcrFjwgfwQdsVN0ffjJT6exwYq7Ow==}
     dependencies:
       '@libsql/client': 0.1.6(bufferutil@4.0.7)(utf-8-validate@6.0.3)
       better-sqlite3: 8.3.0
