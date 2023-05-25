@@ -1,12 +1,12 @@
-# Vue London 2023 demo
+# Coffee or Tea?
 
-A demo application for Vue London 2023 using Nuxt with edge-side rendering on CloudFlare Pages with D1 as database.
+A demo applicatio using Nuxt with edge-side rendering on CloudFlare Pages with D1 as database.
 
 Currently based on [nuxt-space-layer](https://www.npmjs.com/package/nuxt-space-layer) to make it easier to get started with CloudFlare Pages & D1.
 
-Demo is on https://vue-london.pages.dev
+Demo is on https://coffee-or-tea.pages.dev
 
-[![demo-screenshot](https://github.com/Atinux/vue-london-edge/assets/904724/b6eb9925-21b1-4ad4-8c86-2bcefc9f1973)](https://vue-london.pages.dev)
+[![demo-screenshot](https://github.com/Atinux/coffee-or-tea/assets/904724/b6eb9925-21b1-4ad4-8c86-2bcefc9f1973)](https://coffee-or-tea.pages.dev)
 
 ## Setup
 
