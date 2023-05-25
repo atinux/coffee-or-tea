@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const vote = await useDb()
+  const vote = await useDB()
     .insert(tables.votes)
     .values({
       userId: session.user.id,
