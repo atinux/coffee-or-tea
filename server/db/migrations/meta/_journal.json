@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1685027192358,
+      "tag": "0000_peaceful_electro",
+      "breakpoints": true
+    }
+  ]
+}
