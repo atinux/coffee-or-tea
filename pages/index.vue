@@ -23,6 +23,13 @@ function vote(choice) {
     body: { choice }
   }).then(refresh)
 }
+useSeoMeta({
+  title: 'Coffee or Tea?',
+  description: 'A simple app to vote for your favorite drink using Nuxt and SQLite with edge-side rendering.',
+  ogImage: 'https://github.com/Atinux/vue-london-edge/assets/904724/b6eb9925-21b1-4ad4-8c86-2bcefc9f1973',
+  twitterImage: 'https://github.com/Atinux/vue-london-edge/assets/904724/b6eb9925-21b1-4ad4-8c86-2bcefc9f1973',
+  twitterCard: 'summary_large_image'
+})
 </script>
 
 <template>
@@ -34,12 +41,21 @@ function vote(choice) {
     </div>
     <div>
       <p v-if="loggedIn">Hello {{ user.login }}, <button @click="clear" class="underline">logout</button>.</p>
-      <a v-else href="/api/auth" class="bg-black p-4 text-white rounded">Login with GitHub to vote please</a>
+      <a v-else href="/api/auth" class="bg-black px-4 py-2 text-white rounded">Login with GitHub to vote</a>
     </div>
     <ul>
       <li v-for="vote of votes">
         <span class="font-medium">{{ vote.username }}</span> voted for {{ vote.choice === 'coffee' ? '☕️' : '🍵' }}
       </li>
     </ul>
+    <footer class="text-center">
+      <NuxtLink href="https://github.com/atinux/vue-london-edge" target="_blank" class="text-sm text-gray-500 hover:text-gray-700">
+        GitHub
+      </NuxtLink>
+      ·
+      <NuxtLink href="https://twitter.com/Atinux" target="_blank" class="text-sm text-gray-500 hover:text-gray-700">
+        Twitter
+      </NuxtLink>
+    </footer>
   </div>
 </template>
